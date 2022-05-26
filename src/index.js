@@ -4,6 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+//React va a tomar un documento que se llama root, en realidad un id
+
+//dentro de este div, contenido en index.html
+//encuentro todo lo que react está incorporando todo lo que nosotros configuramos, en este caso en el app.js
+//ejemplo nuestro h1, toma ese h1 y lo lleva entremedio del div llamado root
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
