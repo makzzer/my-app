@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const Eventos = () => {
 
@@ -6,7 +6,10 @@ const Eventos = () => {
         console.log('me diste un click')
     }
     return (
-        <div>
+
+        < Fragment >
+            {/* el div anterior puedo reemplzarlo por Fragment siguiente yo lo puedo sacar y usar fragment, porque ese div en si dentro del codigo html no tiene sentido que vaya*/}
+
             <hr />
             <h2>Eventos</h2>
 
@@ -17,7 +20,7 @@ const Eventos = () => {
             {/*Para tener un orden es recomendable tener funciones aparte (como la de eventoClick)*/}
 
             <button onClick={() => eventoClick()}>Click</button>
-        </div>
+        </Fragment >
     )
 }
 
