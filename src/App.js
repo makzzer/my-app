@@ -1,10 +1,12 @@
 import React from 'react';
-import Parrafo from './components/Parrafo';
-import Variables from './components/Variables';
-import Eventos from './components/Eventos';
-import Contador from './components/Contador';
+// import Parrafo from './components/Parrafo';
+// import Variables from './components/Variables';
+// import Eventos from './components/Eventos';
+// import Contador from './components/Contador';
+import Listas from './components/Listas';
 
 
+//para comentar automatico control+k y seguido control+c, para descomentar control+u
 
 //voy a crear los componentes en src/components , cada componente lo creo en extension .jsx y comenzando con mayusculas
 //una vez creado, lo voy a estar llamando desde esta clase App.js
@@ -15,10 +17,11 @@ function App() {
     // y lo reemplaza internamente por class
     <div>
       <h1>Hola Mundo React</h1>
-      <Parrafo />
+      {/* <Parrafo />
       <Variables />
       <Eventos />
-      <Contador />
+      <Contador />  */}
+      <Listas/>
     </div>
   );
 }
