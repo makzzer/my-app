@@ -5,7 +5,15 @@ import React, {useState} from 'react'
 
 const Listas = () => {
 
-    const estadoInicial = [1,2,3,4,5]
+    //const estadoInicial = [1,2,3,4,5]
+    //ahora voy a hacer el array pero en vez de numeros que sean objetos con un id
+    const estadoInicial = [
+        {id:1,texto:'tarea 1'},
+        {id:2,texto:'tarea 2'},
+        {id:3,texto:'tarea 3'},
+    ]
+
+
 
     //dentro de los parentesis le coloco el estado inicial
     const [lista,setLista] = useState(estadoInicial) 
@@ -21,7 +29,7 @@ const Listas = () => {
                 //en la arrow function si uso map el primer elemento de la guarda es el "item" osea cada elemento del array y el index es el indice  
                 //si tuvieramos un id lo pintariamos dentro del key
                 lista.map((item,index) => (
-                    <h4 key={index}>{item}</h4>
+                    <h4 key={item.id}>{item.texto}</h4>
                 ))
             }
         </div>
