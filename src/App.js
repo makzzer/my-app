@@ -3,7 +3,8 @@ import React from 'react';
 // import Variables from './components/Variables';
 // import Eventos from './components/Eventos';
 // import Contador from './components/Contador';
-import Listas from './components/Listas';
+//import Listas from './components/Listas';
+import Formulario from './components/Formulario';
 
 
 //para comentar automatico control+k y seguido control+c, para descomentar control+u
@@ -15,13 +16,14 @@ function App() {
   return (
     //puedo usar className en React, como uso Class en Javascript, react agarra className
     // y lo reemplaza internamente por class
-    <div>
+    <div className='container mt-5'>
       <h1>Hola Mundo React</h1>
       {/* <Parrafo />
       <Variables />
       <Eventos />
-      <Contador />  */}
-      <Listas/>
+      <Contador />  
+      <Listas/> */}
+      <Formulario />
     </div>
   );
 }
