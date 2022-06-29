@@ -12,6 +12,12 @@ const Formulario = () => {
   const [fruta, setFruta] = React.useState('')
   const [descripcion, setDescripcion] = React.useState('')
 
+  //Mi ejercicio - Video 34
+  //lo primero es tener un estado que sea un array vacio
+  //por lo tanto creo una nueva constante que se llame 'lista' y su modificador va a ser 'setLista'
+  //cada vez que el usuario guarde datos, tenemos que insertar tanto la fruta como la descripcion en 'setLista' 
+  const [lista, setLista] = React.useState([])
+
   //conocer un evento llamado OnChange, con eso voy a relacionar nuestros inputs
   //Con nuestro estado, entonces voy a usar setFruta y setDescripcion, que son los que cambian nuestro estado inicial
   //el evento lo incorporamos en el input (onChange={})
@@ -23,7 +29,7 @@ const Formulario = () => {
     e.preventDefault()
 
     //trim() --> esta funcion limpia los datos
-    //pregunto en el if negando porque si, se limpiaron los datos, pero el campo sigue vacio, entonces no ingresó nada
+    //pregunto en el if negando porque si se limpiaron los datos, pero el campo sigue vacio, entonces no ingresó nada
     //con el return no va a llegar a la ultima linea de codigo, es para que antes de procesar esten completos los campos
     if (!fruta.trim()) {
       console.log('está vacio Fruta')
@@ -37,7 +43,17 @@ const Formulario = () => {
       return
     }
 
-    console.log("procesando datos..."+ fruta + descripcion)
+    console.log("procesando datos..." + fruta + descripcion)
+
+    //Linea siguiente - ejercicio de video 34
+    //utilizo este modificador de la lista que crée, su estado incial es un array por lo tanto abro corchetes
+    setLista([
+      ...lista,
+      //lo siguiente es elegir como va a ser el dato que le ingreso a esa lista
+      { nombreFruta: fruta, nombreDescripcion: descripcion }
+    ])
+
+    console.log(lista)
 
     //con lo siguiente limpio los campos que tengo arriba cuando le doy al boton agregar
     e.target.reset()
@@ -45,12 +61,16 @@ const Formulario = () => {
     //volver a limpiar los estados (en la vista de componentes del navegador) con los textos vacios como al comienzo
     setFruta('')
     setDescripcion('')
-    
+
   }
+
+
 
 
   //evento onSubmit --> recibe una función, así que es la que defino arriba, tambien recibe un evento, ese evento saca o previene, 
   //lo que hace HTML por defecto cuando presiono el boton agregar en Formulario.jsx, que es mandar el formulario a traves del metodo GET
+
+
   return (
     <div>
       <h2>Formulario</h2>
@@ -60,7 +80,7 @@ const Formulario = () => {
           className='form-control mb-2'
           //en la siguiete linea el evento onChange recibe como parametro otro evento y el resultado que se va a retornar va a ser el setFruta 
           //(esta es la manera mas facil de trabajar con formularios)
-          //nosotros receibbimos a traves de parentesis () y como React.useState('') es un String, tenemos que mandar un String
+          //nosotros recibimos a traves de parentesis () y como React.useState('') es un String, tenemos que mandar un String
           //con setFruta(e.target.value), voy a estar detectando todo lo que el usuario puso en el input, 
           onChange={(e) => setFruta(e.target.value)}
         />
@@ -72,8 +92,24 @@ const Formulario = () => {
           onChange={(e) => setDescripcion(e.target.value)}
         />
         <button className="btn btn-danger btn-block" type='submit'>Agregar</button>
-
       </form>
+    
+    <ul>
+    {
+      //ejercicio del video 34
+      //lista.map >> lo uso para recorrer el array 'lista'
+      //el map toma un item y ese item es el que vamos a estar retornando por eso ponemos parentesis
+      //como no tenemos id , vamos a llamar al index
+      lista.map((item,index) => (
+        <li key={index}>
+          {item.nombreFruta} - {item.nombreDescripcion} </li>
+      ))
+    }
+    </ul>
+    
+    
+    
+    
     </div>
   )
 }

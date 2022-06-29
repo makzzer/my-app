@@ -3,7 +3,7 @@ import React from 'react';
 // import Variables from './components/Variables';
 // import Eventos from './components/Eventos';
 // import Contador from './components/Contador';
-//import Listas from './components/Listas';
+// import Listas from './components/Listas';
 import Formulario from './components/Formulario';
 
 
@@ -21,7 +21,7 @@ function App() {
       {/* <Parrafo />
       <Variables />
       <Eventos />
-      <Contador />  
+      <Contador />
       <Listas/> */}
       <Formulario />
     </div>

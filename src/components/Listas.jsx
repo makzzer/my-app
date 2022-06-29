@@ -25,7 +25,7 @@ const Listas = () => {
         //a continuación tomemos el set lista e insertemos un nuevo elemento
         //como es un array tiene nosotros tenemos siempre que tengamos estado inicial
         //tenemos que iniciar con lo que haya inicializado este estado, en este caso es un array por eso coloco un array
-        //si no coloco el operador de propagacion con los ... , caundo le de al boton de agregar me va a borrar todo lo que haya y lo reemplazo por lo nuevo
+        //si no coloco el operador de propagacion con los ... , cuando le de al boton de agregar me va a borrar todo lo que haya y lo reemplazo por lo nuevo
         
         //con el ...lista, >> voy a tomar el estado incial que contiene los elementos que ya tenga el array y voy a ir agregando los nuevos
         setLista([
@@ -33,7 +33,6 @@ const Listas = () => {
             {id:3,texto:'tarea 3'}
         ])
     }
-
 
 
     return (
